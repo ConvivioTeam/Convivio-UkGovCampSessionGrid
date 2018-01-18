@@ -30,40 +30,14 @@ export const query = graphql `query SessionsQuery {
 
 export default ({ data }) => {
   return (
-<div>
-    <h1>Hi people</h1>
-      <table>
-    <thead>
-      <tr>
-        <th>Session</th>
-        <th>Room</th>
-        <th>Capacity</th>
-        <th>Title</th>
-        <th>Leader 1</th>
-        <th>Leader 2</th>
-        <th>Leader 3</th>
-        <th>Session notes</th>
-        <th>Hashtag</th>
-        <th>Twitter conversation</th>
-      </tr>
-    </thead>
-    <tbody>
+<div className="session-container">
+<div className="session-time">11:00</div>
 {data.allGoogleSheetSessionsRow.edges.map(({node}, index) =>
-<tr key={index}>
-  <td><Link to={"/session?id=" + node.id}>{node.session}</Link></td>
-  <td>{node.room}</td>
-  <td>{node.capacity}</td>
-  <td>{node.title}</td>
-  <td>{node.leader1}</td>
-  <td>{node.leader2}</td>
-  <td>{node.leader3}</td>
-  <td><a href = { "http://" + node.sessionnotes} target = "_new">{node.sessionnotes}</a></td>
-  <td>{node.hashtag}</td>
-  <td><a href = { "https://" + node.twitterconversation}>{node.twitterconversation}</a></td>
-</tr>
+  <div className="session">
+    <h2 className="session__title">{node.title}This is a test title, kind of long but not too long in my honest opinion</h2>
+    <p className="session__info"><strong>Room:</strong> 2{node.room}</p>
+  </div>
 )}
-    </tbody>
-  </table>
   </div>
 )}
 
