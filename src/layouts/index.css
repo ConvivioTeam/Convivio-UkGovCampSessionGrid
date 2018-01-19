@@ -622,3 +622,21 @@ pre tt:after {
     font-size: 100%;
   }
 }
+.session-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  min-width: 2000px;
+}
+.session-time {
+  grid-column: 1 / span 10;
+  background: lightgrey;
+}
+.session__title {
+  font-size: 16px;
+  margin: 0;
+}
+.session__info {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+}
