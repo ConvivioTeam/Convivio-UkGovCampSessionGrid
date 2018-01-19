@@ -21,28 +21,20 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div className="sessions">
+      <div>
         {this.props.data.allGoogleSheetSessionsRow.group.map((element, key) =>
-          <div className="session-container" key={key}>
-            <h1>Session {element.fieldValue}</h1>
-            <div className="session-time">{this.splitString(element.edges[0].node.time, 2).join(':')}</div>
-            {element.edges.map(({node}, index) =>
-              <div className="session" key={index}>
-                <h2 className="session__title">{node.title ? node.title : 'Awaiting title'}</h2>
-                <div className="session__info">
-                  <strong>Room:</strong> {this.room.exec(node.hashtag)[1].toUpperCase()}<br />
-                  <strong>Capacity:</strong> {node.capacity}<br />
-                  <strong>Leader 1:</strong> {node.leader1}<br />
-                  <strong>Leader 2:</strong> {node.leader2}<br />
-                  <strong>Leader 3:</strong> {node.leader3}<br />
-                  <div className="session__links">
-                    <strong>Session notes:</strong> <a href={"http://" + node.sessionnotes} target = "_new">{node.sessionnotes}</a><br />
-                    <strong>Twitter conversation:</strong> <a href={"https://" + node.twitterconversation} target = "_new">{node.twitterconversation}</a><br />
-                    <strong>Twitter conversation:</strong> <a href={"https://twitter.com/hashtag/" + node.hashtag.replace('#', '')} target = "_new">{node.hashtag}</a>
+          <div className="timeslot" key={key}>
+            <div id={this.splitString(element.edges[0].node.time, 2).join(':')} className="timeslot__time">{this.splitString(element.edges[0].node.time, 2).join(':')}</div>
+            <div className="timeslot__sessions">
+              {element.edges.map(({node}, index) =>
+                <div className="session" key={index}>
+                  <h2 className="session__title">{node.title ? node.title : 'Awaiting title'}</h2>
+                  <div className="session__info">
+                    <strong>Room:</strong> {this.room.exec(node.hashtag)[1].toUpperCase()}<br />
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         )}
       </div>
