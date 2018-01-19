@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Spreadsheet from 'gatsby-source-google-sheets'
 
@@ -28,17 +28,27 @@ export const query = graphql `query SessionsQuery {
 }
 `
 
-export default ({ data }) => {
-  return (
-<div className="session-container">
-<div className="session-time">11:00</div>
-{data.allGoogleSheetSessionsRow.edges.map(({node}, index) =>
-  <div className="session">
-    <h2 className="session__title">{node.title}This is a test title, kind of long but not too long in my honest opinion</h2>
-    <p className="session__info"><strong>Room:</strong> 2{node.room}</p>
-  </div>
-)}
-  </div>
-)}
+class IndexPage extends Component {
 
-//export default IndexPage
+  constructor() {
+    super();
+    this.room = /r(.*)/;
+  }
+
+  render() {
+    return (
+      <div className="session-container">
+        <div className="session-time">11:00</div>
+        {this.props.data.allGoogleSheetSessionsRow.edges.map(({node}, index) =>
+          <div className="session">
+            <h2 className="session__title">{node.title}This is a test title, kind of long but not too long in my honest
+              opinion</h2>
+            <p className="session__info"><strong>Room:</strong> {this.room.exec(node.hashtag)[1]}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+
+export default IndexPage
