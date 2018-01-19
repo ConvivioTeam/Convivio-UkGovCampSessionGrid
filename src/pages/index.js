@@ -30,7 +30,18 @@ class IndexPage extends Component {
             {element.edges.map(({node}, index) =>
               <div className="session" key={index}>
                 <h2 className="session__title">{node.title ? node.title : 'Awaiting title'}</h2>
-                <p className="session__info"><strong>Room:</strong> {this.room.exec(node.hashtag)[1]}</p>
+                <p className="session__info">
+                  <strong>Room:</strong> {this.room.exec(node.hashtag)[1].toUpperCase()}<br />
+                  <strong>Capacity:</strong> {node.capacity}<br />
+                  <strong>Leader 1:</strong> {node.leader1}<br />
+                  <strong>Leader 2:</strong> {node.leader2}<br />
+                  <strong>Leader 3:</strong> {node.leader3}<br />
+                  <div className="session__links">
+                    <strong>Session notes:</strong> <a href={"http://" + node.sessionnotes} target = "_new">{node.sessionnotes}</a><br />
+                    <strong>Twitter conversation:</strong> <a href={"https://" + node.twitterconversation} target = "_new">{node.twitterconversation}</a><br />
+                    <strong>Twitter conversation:</strong> <a href={"https://twitter.com/hashtag/" + node.hashtag.replace('#', '')} target = "_new">{node.hashtag}</a>
+                  </div>
+                </p>
               </div>
             )}
           </div>
