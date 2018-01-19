@@ -20,7 +20,6 @@ class IndexPage extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="sessions">
         {this.props.data.allGoogleSheetSessionsRow.group.map((element, key) =>
@@ -30,7 +29,7 @@ class IndexPage extends Component {
             {element.edges.map(({node}, index) =>
               <div className="session" key={index}>
                 <h2 className="session__title">{node.title ? node.title : 'Awaiting title'}</h2>
-                <p className="session__info">
+                <div className="session__info">
                   <strong>Room:</strong> {this.room.exec(node.hashtag)[1].toUpperCase()}<br />
                   <strong>Capacity:</strong> {node.capacity}<br />
                   <strong>Leader 1:</strong> {node.leader1}<br />
@@ -41,7 +40,7 @@ class IndexPage extends Component {
                     <strong>Twitter conversation:</strong> <a href={"https://" + node.twitterconversation} target = "_new">{node.twitterconversation}</a><br />
                     <strong>Twitter conversation:</strong> <a href={"https://twitter.com/hashtag/" + node.hashtag.replace('#', '')} target = "_new">{node.hashtag}</a>
                   </div>
-                </p>
+                </div>
               </div>
             )}
           </div>
