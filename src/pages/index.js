@@ -29,8 +29,7 @@ class IndexPage extends Component {
             <div className="session-time">{this.splitString(element.edges[0].node.time, 2).join(':')}</div>
             {element.edges.map(({node}, index) =>
               <div className="session" key={index}>
-                <h2 className="session__title">{node.title}This is a test title, kind of long but not too long in my honest
-                  opinion</h2>
+                <h2 className="session__title">{node.title ? node.title : 'Awaiting title'}</h2>
                 <p className="session__info"><strong>Room:</strong> {this.room.exec(node.hashtag)[1]}</p>
               </div>
             )}
