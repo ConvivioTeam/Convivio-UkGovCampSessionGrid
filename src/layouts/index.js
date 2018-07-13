@@ -9,9 +9,9 @@ import './index.css'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Sessions @UKGovCamp 2018 "
+      title="OneTeamGov Global 2018 Session Listing"
       meta={[
-        { name: 'description', content: 'Session schedule for UKGovCamp 2018' },
+        { name: 'description', content: 'OneTeamGov Global 2018 Session Listing' },
       ]}
     />
     <Header />

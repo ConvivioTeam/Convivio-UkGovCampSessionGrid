@@ -5,7 +5,7 @@ var clean_private_key = private_key.split('\\n').join('\n');
 
 var config = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'OneTeamGov Global 2018 Session Listing',
   },
   plugins: [
     {

@@ -38,7 +38,7 @@ template {
   display: none;
 }
 a {
-  color: #3d50a0;
+  color: #f24388;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -629,7 +629,7 @@ pre tt:after {
 }
 .timeslot__time {
   display: block;
-  background: #3d50a0;
+  background: #f24388;
   color: #fff;
   font-size: 20px;
   padding: .2rem .5rem;
@@ -671,12 +671,12 @@ pre tt:after {
   font-size: 14px;
 }
 .mrs-ham {
-  background: url('https://ukgovcamp.govsite.com/wp-content/uploads/sites/6/2016/12/ukgovcamp.png') no-repeat;
+  background: url('./one-team-logo.svg') no-repeat;
   background-size: cover;
   text-indent: -9999em;
   overflow: hidden;
-  width: 160px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
 }
 .convivio-link {
   color: #ec604b;

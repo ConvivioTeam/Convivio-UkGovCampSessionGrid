@@ -10,7 +10,7 @@ const Header = () => (
       }}
     >
       <h1 className="mrs-ham" style={{ margin: 0, fontSize: '24px' }}>
-          UKGovCamp 2018 Session Listing
+          OneTeamGov Global 2018 Session Listing
       </h1>
     </div>
 )

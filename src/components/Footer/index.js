@@ -11,7 +11,7 @@ const Footer = () => (
         fontWeight: 'bold'
       }}
     >
-      <a target="_blank" href="https://www.ukgovcamp.com/">UKGovCamp.com</a>
+      <a target="_blank" href="https://www.oneteamgov.uk">OneTeamGov.uk</a>
       <a target="_blank" className="convivio-link" href="https://weareconvivio.com">Made by Convivio</a>
     </div>
 )
