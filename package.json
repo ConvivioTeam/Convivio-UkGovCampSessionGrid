@@ -9,7 +9,7 @@
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-create-client-paths": "^1.0.2",
     "gatsby-plugin-react-helmet": "^2.0.3",
-    "gatsby-source-google-sheets": "^1.0.5",
+    "gatsby-source-google-sheets": "^1.1.1",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
